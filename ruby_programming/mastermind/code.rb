@@ -1,5 +1,4 @@
 class Code
-  VALID_COLORS = %w(red green blue orange white black)
 
   attr_accessor :colors
 
@@ -13,17 +12,23 @@ class Code
     return_reds_and_whites(colors1, colors2)
   end
 
+  def get_colors_with_wrong_position(code2)
+    colors1 = self.colors
+    colors2 = code2.colors
+    return_reds_and_whites(colors1, colors2, only_white = true)
+  end
+
   def self.generate!
-    colors = Array.new(4) { VALID_COLORS.sample }
+    colors = Array.new(4) { Game::VALID_COLORS.sample }
     self.new(colors)
   end
 
   private
 
-  def return_reds_and_whites(colors1, colors2)
+  def return_reds_and_whites(colors1, colors2, only_white = false)
     reds = 0
     white_hash = {}
-    VALID_COLORS.each { |color| white_hash[color] = 0 }
+    Game::VALID_COLORS.each { |color| white_hash[color] = 0 }
 
     colors1.each_with_index do |color, index|
       begin
@@ -39,19 +44,15 @@ class Code
         next
       end
     end
+    return colors_with_wrong_position(white_hash) if only_white
     { reds: reds, whites: count_unique_whites(white_hash) } 
   end
 
   def count_unique_whites(white_hash)
-    puts white_hash
     white_hash.select { |color, count| count > 0 }.count
   end
 
-  # ["black", "red", "orange", "black"]
-  # ["orange", "red", "black", "black"]
-  # ["red", "black", "black", "white"]
-  # ["white", "white", "black", "black"]
-  # ["red", "white", "black", "white"]
-  # %w(black black green black) uniq?
-  # %w(green black black black)
+  def colors_with_wrong_position(white_hash)
+    white_hash.select { |color, count| count > 0 }.keys
+  end
 end
