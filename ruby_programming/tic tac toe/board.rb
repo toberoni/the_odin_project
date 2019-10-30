@@ -13,6 +13,10 @@ class Board
     get_space(x, y).value = value
   end
 
+  def set_row(number, value)
+    get_space(x, y).value = value
+  end
+
   def formatted_grid
     grid.each do |row|
       puts row.map { |cell| cell.value.empty? ? "_" : cell.value }.join(" ")
