@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Binary Search Trees
 
 Part of [The Odin Project Curriculum](https://www.theodinproject.com/courses/ruby-programming/lessons/data-structures-and-algorithms).
@@ -8,15 +7,6 @@ Part of [The Odin Project Curriculum](https://www.theodinproject.com/courses/rub
 Build a simple binary search tree in this assignment. In this lesson, our tree won’t handle duplicate values as they are more complicated and result in trees that are much harder to balance. Be sure to always remove duplicate values or check for an existing value before inserting.
 
 ## Implementation
-=======
-#Binary Search Trees
-
-##Task
-
-Build a simple binary search tree in this assignment. In this lesson, our tree won’t handle duplicate values as they are more complicated and result in trees that are much harder to balance. Be sure to always remove duplicate values or check for an existing value before inserting.
-
-##Implementation
->>>>>>> 51f9d6a3530a24ccc3e1fc703ac6b427888fe12b
 
 A `Node` class.
 
