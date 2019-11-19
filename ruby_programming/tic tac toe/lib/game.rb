@@ -1,7 +1,7 @@
-require './space.rb'
-require './board.rb'
-require './player.rb'
-require './core_extensions.rb'
+require './lib/space.rb'
+require './lib/board.rb'
+require './lib/player.rb'
+require './lib/core_extensions.rb'
 
 
 class Game
@@ -67,9 +67,9 @@ class Game
 end
 
 
-puts "Welcome to tic tac toe"
-play1 = Player.new(name: "Player 1", sign: "X")
-play2 = Player.new(name: "Player 2", sign: "O")
-players = [play1, play2]
-game = Game.new(players)
-game.play
+#puts "Welcome to tic tac toe"
+#play1 = Player.new(name: "Player 1", sign: "X")
+#play2 = Player.new(name: "Player 2", sign: "O")
+#players = [play1, play2]
+#game = Game.new(players)
+#game.play
